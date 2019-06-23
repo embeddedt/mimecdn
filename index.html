@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+	<head>
+		<title>MimeCDN</title>
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	</head>
+	<body>
+		MimeCDN redirecting...
+		<p>
+		If nothing happens, redirection probably failed. Check your browser console for details.
+		<script>
+			function getSearchArg(argname) {
+				/* Run custom script if passed */
+				var custom = undefined;
+				try {
+					custom = new URL(window.location.href).searchParams.get(argname);
+				} catch (e) {
+					console.log(e + ": URL seems to be unsupported");
+				}
+				return custom;
+			}
+			$(window).load(function() {
+				var url = getSearchArg("rawurl");
+				if(url) {
+				}
+				var request = new XMLHttpRequest();
+				console.log("GET " + url);
+				request.open('GET', url, true);
+				request.send(null);
+				request.onreadystatechange = function () {
+					if (request.readyState === 4 && request.status === 200) {
+						document.open();
+						document.write(request.responseText);
+						document.close();
+					}
+				}
+			});
+		</script>
