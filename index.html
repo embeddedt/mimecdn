@@ -29,6 +29,7 @@
 				request.send(null);
 				request.onreadystatechange = function () {
 					if (request.readyState === 4 && request.status === 200) {
+						window.history.pushState("some data", "MimeCDN redirect", url);
 						document.open();
 						document.write(request.responseText);
 						document.close();
