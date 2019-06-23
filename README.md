@@ -11,6 +11,6 @@ Example: https://embeddedt.github.io/mimecdn/index.html?rawurl=https://raw.githu
 
 Normally, when accessing raw HTML files on GitHub, they are served with a MIME type of `text/plain`. This tells the browser not to actually treat the file as HTML, but rather as a plaintext file (`.txt`).
 
-MimeCDN gets around this issue by ignoring the MIME type, and manually reading the file. (This is where the name "MimeCDN" came from.) The contents of the MimeCDN document are then replaced by the contents of your URL.
+MimeCDN gets around this issue by ignoring the MIME type, and manually reading the file. (This is where the name "MimeCDN" came from.) The contents of the MimeCDN document are then replaced by the contents of your URL. The code's pretty simple and self-explanatory; you can read that for more information.
 
 One cool thing about MimeCDN is that there is no server-side logic happening. All of this is handled directly within your browser. No extensions or anything special is required. Just fill in the `rawurl` query parameter with your URL, and everything is handled automagically.
